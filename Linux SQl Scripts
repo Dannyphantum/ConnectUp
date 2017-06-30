@@ -1,0 +1,8 @@
+mysql> create database connectUp;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create user 'connectUpUser'@'localhost' identified by 'needJobNow';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> grant all on connectUp.* to 'connectUpUser'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
