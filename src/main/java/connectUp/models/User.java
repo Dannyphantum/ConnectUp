@@ -1,9 +1,10 @@
-package connectUp;
+package connectUp.models;
 
 import javax.persistence.*;
+
 import java.util.Set;
 
-@Entity
+@Entity // Creates table with the following as columns
 public class User {
 
 	@Id
@@ -19,7 +20,11 @@ public class User {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(joinColumns = @JoinColumn (name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
-
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "id")
+	private Set<Education> schoolin;
+	
 	public long getId() {
 		return id;
 	}
@@ -58,5 +63,13 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Set<Education> getSchoolin() {
+		return schoolin;
+	}
+
+	public void setSchoolin(Set<Education> schoolin) {
+		this.schoolin = schoolin;
 	}
 }
