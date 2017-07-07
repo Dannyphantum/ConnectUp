@@ -17,6 +17,10 @@ public class Job {
 	
 	private String jobCompany;
 
+	private String dutyOne;
+	
+	private String dutyTwo;
+	
 	LocalDateTime startDate;
 	
 	LocalDateTime endDate;
@@ -59,5 +63,21 @@ public class Job {
 
 	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
+	}
+
+	public String getDutyOne() {
+		return dutyOne;
+	}
+
+	public void setDutyOne(String dutyOne) {
+		this.dutyOne = dutyOne;
+	}
+
+	public String getDutyTwo() {
+		return dutyTwo;
+	}
+
+	public void setDutyTwo(String dutyTwo) {
+		this.dutyTwo = dutyTwo;
 	}
 }

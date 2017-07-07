@@ -11,16 +11,16 @@ public class Skills {
 	@GeneratedValue
 	private long id;
 	
-	private String skills;
+	private String skill;
 	
 	private String proficiency;
 
-	public String getSkills() {
-		return skills;
+	public String getSkill() {
+		return skill;
 	}
 
-	public void setSkills(String skills) {
-		this.skills = skills;
+	public void setSkill(String skill) {
+		this.skill = skill;
 	}
 
 	public String getProficiency() {

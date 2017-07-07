@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import connectUp.models.Education;
 import connectUp.models.Role;
 import connectUp.models.User;
+import connectUp.repositories.UserRepository;
 
 
 @Transactional
@@ -63,13 +64,14 @@ public class SSUserDetailsService implements UserDetailsService {
 		LOGGER.debug("user authorities are " + authorities.toString());
 		return authorities;
 	}
-	
+	/*
 	private Set<Education> getEducation (User user){
 		Set<Education> education = new HashSet<Education>();
 		for (Education school : user.getSchoolin()){
 					education.add(school);
 		}
+		LOGGER.debug("Education " + education.toString());
 				return education;
 	}
-	
+	*/
 }

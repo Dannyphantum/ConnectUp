@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import connectUp.repositories.UserRepository;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -29,10 +31,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 				.antMatchers("/home").hasRole("USER");
 				
 		http
+				.antMatcher("/signup")
 				.formLogin().failureUrl("/")
 				.defaultSuccessUrl("/home")
 				.loginPage("/login")
-				.permitAll();
+				.permitAll()
+				.and()
+				.csrf().disable();
 				
 	}
 	
