@@ -6,6 +6,7 @@ import java.util.Collection;
 //import java.util.Set;
 
 @Entity // Creates table with the following as columns
+@Table(name = "userData")
 public class User {
 
 	@Id
